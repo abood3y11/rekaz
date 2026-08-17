@@ -6,7 +6,7 @@
 
 | الملف | الوصف |
 |---|---|
-| `rekaz.html` | الصفحة كاملة (HTML + CSS + JS في ملف واحد) |
+| `index.html` | الصفحة كاملة (HTML + CSS + JS في ملف واحد) |
 | `assets/rekaz.png` | الشعار الأصلي |
 | `assets/rekaz-logo.png` | نسخة مقصوصة من الشعار للعرض في الصفحة |
 | `assets/rekaz.ico` | أيقونة المتصفح (favicon) |
@@ -23,7 +23,7 @@
    - **Execute as:** Me
    - **Who has access:** Anyone
 5. وافق على الأذونات، ثم انسخ رابط الـ Web app (ينتهي بـ `/exec`).
-6. افتح `rekaz.html` وابحث عن السطر:
+6. افتح `index.html` وابحث عن السطر:
    ```js
    var SHEETS_ENDPOINT=''; // ← ضع هنا رابط النشر من Google Apps Script
    ```
@@ -35,4 +35,4 @@
 
 ## التشغيل محلياً
 
-افتح `rekaz.html` مباشرة في المتصفح — لا يحتاج خادماً. المكتبات (GSAP، Lenis، Three.js) تُحمَّل من CDN.
+افتح `index.html` مباشرة في المتصفح — لا يحتاج خادماً. المكتبات (GSAP، Lenis، Three.js) تُحمَّل من CDN.
