@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0D4F45">
+<link rel="icon" type="image/x-icon" href="assets/rekaz.ico">
+<title>ركاز للإمداد والخدمات اللوجستية | تأجير شاحنات قلابة وتشغيل أساطيل</title>
+<meta name="description" content="ركاز للإمداد والخدمات اللوجستية — تأجير شاحنات قلابة سعة 24 م³ بالشهر، نقل الرمال ومواد الردم، وتشغيل أساطيل لمشاريع أرامكو والمشاريع الصناعية في المملكة.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --basalt:#111514;
+  --steel:#16332E;
+  --steel-2:#1F4A42;
+  --teal:#1E9B85;
+  --teal-deep:#0D4F45;
+  --mint:#4CC0A4;
+  --sand:#BFE6DA;
+  --concrete:#F4F7F5;
+  --line:#D9E2DE;
+  --ink:#151514;
+  --ink-soft:#5C6B66;
+  --white:#fff;
+  --r:14px;
+  --shadow-sm:0 4px 6px rgba(17,21,20,.10), 0 2px 4px rgba(17,21,20,.06);
+  --shadow-md:0 10px 15px rgba(17,21,20,.10), 0 4px 6px rgba(17,21,20,.05);
+  --shadow-lg:0 24px 48px rgba(17,21,20,.18);
+  --grad-dark:linear-gradient(150deg,#101413 0%,#123B34 55%,#17594C 100%);
+  --grad-teal:linear-gradient(135deg,#4CC0A4 0%,#1E9B85 48%,#0D4F45 100%);
+  --grad-sand:linear-gradient(135deg,#F2FAF7 0%,#DBEEE7 100%);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--concrete);color:var(--ink);
+  font-family:"IBM Plex Sans Arabic",system-ui,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Readex Pro",system-ui,sans-serif;line-height:1.3;margin:0;font-weight:600;letter-spacing:-.01em}
+p{margin:0 0 1rem}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.skip-link{position:absolute;top:-56px;inset-inline-start:1rem;z-index:100;background:var(--teal-deep);color:#fff;padding:.6rem 1.2rem;border-radius:0 0 10px 10px;font-weight:600;transition:top .2s}
+.skip-link:focus{top:0}
+
+/* hazard stripe — signature motif */
+.hazard{height:8px;background:repeating-linear-gradient(115deg,var(--teal) 0 22px,var(--basalt) 22px 44px)}
+.hazard--thin{height:4px;opacity:.9}
+
+/* ---------- top utility ---------- */
+.util{background:var(--basalt);color:#A3B5AF;font-size:.8rem;padding:.5rem 0}
+.util .wrap{display:flex;gap:1.25rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.util a:hover{color:var(--teal)}
+.util-group{display:flex;gap:1.25rem;flex-wrap:wrap}
+
+/* ---------- nav ---------- */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.nav .wrap{display:flex;align-items:center;gap:1.5rem;height:76px}
+.brand{display:flex;align-items:center;gap:.7rem;margin-inline-end:auto}
+.mark{width:42px;height:42px;border-radius:10px;background:var(--grad-dark);display:grid;place-items:center;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;flex:none}
+.mark::after{content:"";position:absolute;inset-inline-start:0;top:0;bottom:0;width:6px;background:var(--grad-teal)}
+.mark span{font-family:"Readex Pro";color:#fff;font-size:1.05rem;font-weight:700;padding-inline-start:6px}
+.logo-img{height:44px;width:auto;display:block}
+footer .logo-img{background:#fff;border-radius:10px;padding:.35rem .7rem;height:48px}
+@media (max-width:520px){.logo-img{height:34px}}
+.brand b{display:block;font-family:"Readex Pro";font-size:1.02rem;font-weight:600;line-height:1.25}
+.brand small{display:block;color:var(--ink-soft);font-size:.72rem;letter-spacing:.06em;font-family:"IBM Plex Mono"}
+.menu{display:flex;gap:1.6rem;font-size:.95rem;font-weight:500}
+.menu a{padding:.35rem 0;border-bottom:2px solid transparent;transition:.25s}
+.menu a:hover{color:var(--teal-deep);border-color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border:0;cursor:pointer;font-family:"Readex Pro";font-weight:600;font-size:.95rem;padding:.8rem 1.4rem;border-radius:10px;transition:transform .25s, box-shadow .25s, background .25s}
+.btn-primary{background:var(--grad-teal);color:#06231D;box-shadow:0 6px 14px rgba(13,79,69,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(13,79,69,.4)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+.btn-dark{background:var(--grad-dark);color:#fff;box-shadow:var(--shadow-md)}
+.btn-dark:hover{transform:translateY(-2px)}
+.nav-toggle{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:.55rem .7rem;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{background:var(--grad-dark);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset-block:0;inset-inline-end:-10%;width:60%;
+  background:radial-gradient(circle at 60% 40%, rgba(30,155,133,.22), transparent 62%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center;padding:5rem 0 5.5rem;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:"IBM Plex Mono";font-size:.76rem;letter-spacing:.14em;color:var(--teal);border:1px solid rgba(30,155,133,.35);background:rgba(30,155,133,.08);padding:.4rem .85rem;border-radius:999px;margin-bottom:1.5rem}
+.hero h1{font-size:clamp(2rem,4.4vw,3.35rem);font-weight:700;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p.lead{color:#C4D6D0;font-size:1.08rem;margin:1.35rem 0 2rem;max-width:46ch}
+.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap}
+
+/* spec plate — signature element */
+.plate{background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.16);border-radius:18px;padding:1.6rem;box-shadow:var(--shadow-lg);backdrop-filter:blur(6px)}
+.plate-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:.9rem;border-bottom:1px dashed rgba(255,255,255,.22);margin-bottom:.4rem}
+.plate-head span{font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.12em;color:#97A8A2}
+.plate-head b{font-family:"Readex Pro";font-size:.9rem;color:var(--teal)}
+.spec{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.spec:last-child{border-bottom:0}
+.spec dt{color:#AEBEB8;font-size:.9rem}
+.spec dd{margin:0;font-family:"IBM Plex Mono";font-size:1.3rem;font-weight:600;color:#fff}
+.spec dd small{font-size:.72rem;color:#93A69F;margin-inline-start:.25rem}
+
+/* ---------- coverage strip ---------- */
+.strip{background:var(--basalt);color:#91A19B;padding:1.1rem 0;font-size:.9rem}
+.strip .wrap{display:flex;gap:2rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.strip b{color:#E8F1EE;font-family:"Readex Pro";font-weight:500}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.chip{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:.3rem .8rem;font-size:.82rem}
+
+/* ---------- sections ---------- */
+section{padding:5rem 0}
+.sec-head{max-width:58ch;margin-bottom:2.75rem}
+.kicker{font-family:"IBM Plex Mono";font-size:.75rem;letter-spacing:.16em;color:var(--teal-deep);display:block;margin-bottom:.75rem}
+.sec-head h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+.sec-head p{color:var(--ink-soft);margin-top:.9rem}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.75rem;box-shadow:var(--shadow-sm);transition:transform .3s, box-shadow .3s, border-color .3s;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;inset-inline-start:0;width:100%;height:3px;background:var(--grad-teal);transform:scaleX(0);transform-origin:right;transition:transform .35s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:#CFC7B8}
+.card:hover::before{transform:scaleX(1)}
+.card .idx{font-family:"IBM Plex Mono";font-size:.78rem;color:var(--teal-deep);letter-spacing:.1em}
+.card h3{font-size:1.16rem;margin:.6rem 0 .55rem}
+.card p{color:var(--ink-soft);font-size:.95rem;margin:0 0 1rem}
+.card .more{font-size:.88rem;font-weight:600;color:var(--ink);border-bottom:2px solid var(--teal);padding-bottom:2px}
+
+/* fleet table */
+.fleet{background:var(--grad-sand);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-md)}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+thead{background:var(--steel);color:#fff}
+th,td{padding:1rem 1.25rem;text-align:right}
+th{font-family:"Readex Pro";font-weight:500;font-size:.9rem}
+tbody tr{border-bottom:1px solid rgba(0,0,0,.07)}
+tbody tr:last-child{border-bottom:0}
+tbody tr:hover{background:rgba(255,255,255,.6)}
+td.n{font-family:"IBM Plex Mono";font-weight:600}
+
+/* process */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem}
+.step{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.4rem;box-shadow:var(--shadow-sm);position:relative}
+.step::after{counter-increment:s;content:"0" counter(s);position:absolute;top:1rem;inset-inline-end:1rem;font-family:"IBM Plex Mono";font-size:.8rem;color:var(--teal-deep);opacity:.9}
+.step h4{font-size:1rem;margin:.4rem 0 .45rem}
+.step p{font-size:.88rem;color:var(--ink-soft);margin:0}
+
+/* partners band */
+.band{background:var(--grad-dark);color:#fff;border-radius:20px;padding:3rem;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;inset-inline-start:-40px;bottom:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(30,155,133,.28),transparent 70%)}
+.band .inner{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:center;position:relative}
+.band h2{font-size:clamp(1.5rem,2.6vw,2rem)}
+.band p{color:#C4D6D0;margin:1rem 0 0}
+
+/* quote form */
+.quote{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:2rem;box-shadow:var(--shadow-md)}
+.field{margin-bottom:1.1rem}
+label{display:block;font-size:.88rem;font-weight:600;margin-bottom:.4rem}
+input,select,textarea{width:100%;font-family:inherit;font-size:.95rem;padding:.8rem .95rem;border:1px solid var(--line);border-radius:10px;background:#FCFBF9;transition:border-color .2s, box-shadow .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(30,155,133,.15);outline:none}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.contact-list{list-style:none;padding:0;margin:0}
+.contact-list li{display:flex;gap:.85rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(--line)}
+.contact-list li:last-child{border-bottom:0}
+.contact-list span{font-size:.82rem;color:var(--ink-soft);display:block}
+.contact-list b{font-family:"Readex Pro";font-weight:500}
+.dot{width:34px;height:34px;border-radius:9px;background:var(--grad-sand);border:1px solid var(--line);display:grid;place-items:center;flex:none;font-size:1rem}
+
+/* footer */
+footer{background:var(--basalt);color:#93A69F;padding:3.5rem 0 1.5rem;font-size:.92rem}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem}
+footer h5{font-family:"Readex Pro";color:#fff;font-size:.95rem;margin:0 0 1rem;font-weight:500}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin-bottom:.6rem}
+footer a:hover{color:var(--teal)}
+.f-bottom{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem}
+
+/* whatsapp */
+.wa{position:fixed;inset-inline-start:20px;bottom:20px;z-index:60;background:#25D366;color:#04310F;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 10px 22px rgba(37,211,102,.4);transition:transform .25s}
+.wa:hover{transform:scale(1.08)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- 3D showcase (Three.js + GSAP ScrollTrigger + Lenis) ---------- */
+html.lenis{scroll-behavior:auto}
+html.gsap .rv{opacity:1;transform:none;transition:none}
+.w,.digits .c{display:inline-block}
+.scene3d{position:relative;height:100vh;height:100svh;background:var(--grad-dark);overflow:hidden;color:#fff}
+.s3-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.s3-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 50% at 68% 30%,rgba(30,155,133,.16),transparent 65%),radial-gradient(45% 40% at 22% 75%,rgba(76,192,164,.10),transparent 70%)}
+.s3-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 90% at 50% 45%,transparent 55%,rgba(10,14,19,.55) 100%)}
+.s3-ui{position:absolute;inset:0;z-index:3;pointer-events:none}
+.ch{position:absolute;top:50%;translate:0 -50%;inset-inline:0;padding-inline:min(7vw,110px);opacity:0;visibility:hidden}
+.ch .k{display:inline-block;font-family:"IBM Plex Mono";font-size:.78rem;letter-spacing:.18em;color:var(--teal);border:1px solid rgba(30,155,133,.35);background:rgba(17,21,20,.5);padding:.35rem .85rem;border-radius:999px;margin-bottom:1.25rem;backdrop-filter:blur(4px)}
+.ch h3{font-size:clamp(2.1rem,6vw,4.3rem);font-weight:700;line-height:1.3;letter-spacing:-.02em;text-shadow:0 4px 30px rgba(6,10,15,.6)}
+.ch p{color:#C8D8D2;font-size:clamp(1rem,1.6vw,1.2rem);max-width:44ch;margin:1.2rem 0 0;text-shadow:0 2px 18px rgba(6,10,15,.7)}
+.ch .stat{display:flex;align-items:baseline;gap:.8rem}
+.ch .stat .digits{font-family:"IBM Plex Mono";font-size:clamp(4.5rem,14vw,9.5rem);font-weight:600;color:var(--teal);line-height:1;text-shadow:0 8px 44px rgba(30,155,133,.35)}
+.ch .stat .unit{font-family:"Readex Pro";font-size:clamp(1.2rem,2.6vw,1.9rem);color:#E8F1EE}
+.ch1,.ch4{text-align:center}
+.ch1 h3{max-width:22ch;margin-inline:auto}
+.ch1 p,.ch4 p{margin-inline:auto}
+.ch-cta{display:flex;gap:.9rem;justify-content:center;margin-top:1.7rem;pointer-events:auto}
+.s3-rail{position:absolute;inset-inline-end:2rem;top:50%;translate:0 -50%;z-index:4;display:flex;flex-direction:column;gap:26px;align-items:center}
+.s3-rail::before{content:"";position:absolute;top:4px;bottom:4px;width:2px;background:rgba(255,255,255,.14);border-radius:2px}
+.s3-fill{position:absolute;top:4px;height:calc(100% - 8px);width:2px;background:var(--grad-teal);transform-origin:top;transform:scaleY(0);border-radius:2px}
+.s3-dot{width:9px;height:9px;border-radius:50%;background:#24332F;border:1px solid rgba(255,255,255,.25);z-index:1;transition:background .3s,box-shadow .3s}
+.s3-dot.on{background:var(--teal);box-shadow:0 0 12px rgba(30,155,133,.8)}
+.s3-hint{position:absolute;bottom:1.8rem;inset-inline:0;text-align:center;z-index:4;color:#A3B5AF;font-size:.8rem;font-family:"IBM Plex Mono";letter-spacing:.12em}
+.s3-hint .arr{display:inline-block;margin-inline-start:.4rem;animation:s3bob 1.6s ease-in-out infinite}
+@keyframes s3bob{50%{transform:translateY(6px)}}
+@media (min-width:981px){
+  .ch2{padding-inline-end:52vw}
+  .ch3{padding-inline-start:52vw}
+}
+@media (max-width:980px){
+  .ch{text-align:center}
+  .ch h3,.ch p{margin-inline:auto}
+  .ch .stat{justify-content:center}
+  .s3-rail{display:none}
+}
+
+@media (max-width:980px){
+  .hero .wrap{grid-template-columns:1fr;gap:2.5rem;padding:3.5rem 0}
+  .grid-3,.grid-2,.steps,.band .inner,.f-grid{grid-template-columns:1fr}
+  .menu{display:none}
+  .nav-toggle{display:block}
+  .menu.open{display:flex;position:absolute;top:76px;inset-inline:0;background:#fff;flex-direction:column;padding:1.25rem 4vw;gap:1rem;border-bottom:1px solid var(--line);box-shadow:var(--shadow-md)}
+  .nav .btn-primary{display:none}
+  .two{grid-template-columns:1fr}
+  .band{padding:2rem}
+  table{font-size:.85rem}
+  th,td{padding:.75rem}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">تخطَّ إلى المحتوى الرئيسي</a>
+
+<div class="util">
+  <div class="wrap">
+    <div class="util-group">
+      <span>س.ت: <span class="num">••••••••••</span></span>
+      <span>جدة · المنطقة الشرقية</span>
+    </div>
+    <div class="util-group">
+      <a href="tel:+966500000000" class="num">+966 50 000 0000</a>
+      <a href="mailto:info@rekaz.sa">info@rekaz.sa</a>
+      <a href="#">EN</a>
+    </div>
+  </div>
+</div>
+<div class="hazard hazard--thin"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#">
+      <img class="logo-img" src="assets/rekaz-logo.png" alt="شعار ركاز">
+      <span>
+        <b>ركاز للإمداد والخدمات اللوجستية</b>
+        <small>REKAZ LOGISTICS</small>
+      </span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#services">الخدمات</a>
+      <a href="#fleet">الأسطول</a>
+      <a href="#process">كيف نعمل</a>
+      <a href="#partners">شركاء الأسطول</a>
+      <a href="#quote">تواصل معنا</a>
+    </nav>
+    <a href="#quote" class="btn btn-primary">اطلب عرض سعر</a>
+    <button class="nav-toggle" id="toggle" aria-label="القائمة" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">تأجير وتشغيل أساطيل · مشاريع صناعية</span>
+      <h1>أساطيل قلابات جاهزة للعمل في <em>موقع مشروعك</em>.</h1>
+      <p class="lead">نوفّر شاحنات قلابة سعة 24 م³ بعقود إيجار شهرية، مع التصاريح والتأمين والصيانة وشاحنات بديلة — لنقل الرمال ومواد الردم في مشاريع أرامكو والمشاريع الصناعية والإنشائية.</p>
+      <div class="hero-cta">
+        <a href="#quote" class="btn btn-primary">اطلب عرض سعر</a>
+        <a href="#fleet" class="btn btn-ghost">تصفّح الأسطول</a>
+      </div>
+    </div>
+
+    <aside class="plate" aria-label="مواصفات التشغيل">
+      <div class="plate-head"><span>OPERATING SPEC</span><b>لوحة التشغيل</b></div>
+      <dl style="margin:0">
+        <div class="spec"><dt>سعة الصندوق</dt><dd><span class="cnt" data-to="24">24</span><small>م³</small></dd></div>
+        <div class="spec"><dt>حجم الأسطول المتاح</dt><dd><span class="cnt" data-to="150">150</span><small>شاحنة</small></dd></div>
+        <div class="spec"><dt>موديلات الشاحنات</dt><dd>2025–2026</dd></div>
+        <div class="spec"><dt>نوبة التشغيل</dt><dd><span class="cnt" data-to="10">10</span><small>ساعات</small></dd></div>
+        <div class="spec"><dt>شاحنة بديلة خلال</dt><dd><span class="cnt" data-to="48">48</span><small>ساعة</small></dd></div>
+      </dl>
+    </aside>
+  </div>
+</div>
+<div class="hazard"></div>
+
+<!-- 3D SHOWCASE — pinned, scroll-scrubbed WebGL journey (Three.js + GSAP ScrollTrigger + Lenis) -->
+<section class="scene3d" id="showcase" aria-label="جولة ثلاثية الأبعاد في الأسطول">
+  <div class="s3-glow" data-depth="1" aria-hidden="true"></div>
+  <canvas class="s3-canvas" id="s3-canvas" data-depth="3" aria-hidden="true"></canvas>
+  <div class="s3-vignette" data-depth="5" aria-hidden="true"></div>
+
+  <div class="s3-ui" data-depth="4">
+    <div class="ch ch1">
+      <span class="k">REKAZ · جولة ثلاثية الأبعاد</span>
+      <h3 class="s3-title">قوة نقل صُمّمت لمشاريع لا تتوقف</h3>
+      <p class="s3-sub">تابع التمرير لتدور حول القلاب وتشاهده من كل زاوية — من الكابينة إلى الصندوق.</p>
+    </div>
+
+    <div class="ch ch2">
+      <span class="k">سعة الصندوق</span>
+      <div class="stat"><span class="digits" dir="ltr">24</span><span class="unit">م³</span></div>
+      <p class="s3-sub">حمولة أكبر في كل نقلة — رمال وبحص ومواد ردم بجدولة يومية دقيقة.</p>
+    </div>
+
+    <div class="ch ch3">
+      <span class="k">حجم الأسطول</span>
+      <div class="stat"><span class="digits" dir="ltr">150</span><span class="unit">شاحنة</span></div>
+      <p class="s3-sub">موديلات 2025–2026 جاهزة للتوريد على دفعات حسب جدول مشروعك.</p>
+    </div>
+
+    <div class="ch ch4">
+      <span class="k">جاهزون للتحميل؟</span>
+      <h3 class="s3-title">أسطولك القادم يبدأ من هنا</h3>
+      <div class="ch-cta">
+        <a href="#quote" class="btn btn-primary">اطلب عرض سعر</a>
+        <a href="#fleet" class="btn btn-ghost">مواصفات الأسطول</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="s3-rail" aria-hidden="true">
+    <span class="s3-fill"></span>
+    <span class="s3-dot on"></span>
+    <span class="s3-dot"></span>
+    <span class="s3-dot"></span>
+    <span class="s3-dot"></span>
+  </div>
+
+  <div class="s3-hint" aria-hidden="true">مرّر للأسفل <span class="arr">↓</span></div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <b>تغطية تشغيلية</b>
+    <div class="chips">
+      <span class="chip">الدمام</span><span class="chip">الجبيل</span><span class="chip">رأس الخير</span>
+      <span class="chip">جدة</span><span class="chip">مكة المكرمة</span><span class="chip">الرياض</span><span class="chip">نيوم</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">ما نقدّمه</span>
+      <h2>خدمات الإمداد والتشغيل</h2>
+      <p>كل خدمة لها صفحة مستقلة بتفاصيل المواصفات والتغطية والأسئلة الشائعة.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card rv"><span class="idx">01</span><h3>تأجير قلابات بالشهر</h3><p>قلابات 24 م³ بعقود شهرية أو سنوية، مع أو بدون سائقين، وتوريد دفعات حسب جدول المشروع.</p><a class="more" href="#">تفاصيل الخدمة</a></article>
+      <article class="card rv"><span class="idx">02</span><h3>نقل الرمال ومواد الردم</h3><p>نقل الرمال والبحص ومخلفات الحفر من مواقع التحميل إلى مواقع التفريغ بأحمال يومية مجدولة.</p><a class="more" href="#">تفاصيل الخدمة</a></article>
+      <article class="card rv"><span class="idx">03</span><h3>تشغيل أساطيل بسائقين</h3><p>سائقون معتمدون ورخص سارية ومتابعة تشغيل يومية مع تقارير أداء وساعات عمل.</p><a class="more" href="#">تفاصيل الخدمة</a></article>
+      <article class="card rv"><span class="idx">04</span><h3>نقل المعدات الثقيلة</h3><p>لوبدات وسطحات لنقل الحفارات والشيولات والمعدات بين المواقع مع إدارة التصاريح.</p><a class="more" href="#">تفاصيل الخدمة</a></article>
+      <article class="card rv"><span class="idx">05</span><h3>إمداد مشاريع أرامكو</h3><p>تجهيز المستندات والتأمين والفحص وتصاريح الدخول بما يوافق متطلبات العميل قبل المباشرة.</p><a class="more" href="#">تفاصيل الخدمة</a></article>
+      <article class="card rv"><span class="idx">06</span><h3>عقود التشغيل طويلة الأجل</h3><p>عقود سنوية بأسعار ثابتة وبنود واضحة للصيانة والبدائل والغرامات وحدود المسؤولية.</p><a class="more" href="#">تفاصيل الخدمة</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section id="fleet" style="background:#fff;border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">الأسطول</span>
+      <h2>مواصفات المركبات المتاحة</h2>
+      <p>الأعداد قابلة للزيادة حسب حجم المشروع، والتوريد يتم على دفعات متفق عليها.</p>
+    </div>
+    <div class="fleet rv">
+      <table>
+        <thead><tr><th>المركبة</th><th>السعة</th><th>الموديل</th><th>نمط التعاقد</th><th>المتاح</th></tr></thead>
+        <tbody>
+          <tr><td>شاحنة قلاب</td><td class="n">24 م³</td><td class="n">2025–2026</td><td>إيجار شهري</td><td class="n">150</td></tr>
+          <tr><td>شاحنة قلاب</td><td class="n">18 م³</td><td class="n">2024–2026</td><td>إيجار شهري / يومي</td><td class="n">حسب الطلب</td></tr>
+          <tr><td>لوبد نقل معدات</td><td class="n">60 طن</td><td class="n">2023–2026</td><td>بالرحلة</td><td class="n">حسب الطلب</td></tr>
+          <tr><td>وايت ماء</td><td class="n">20 م³</td><td class="n">2024–2026</td><td>إيجار شهري</td><td class="n">حسب الطلب</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">آلية العمل</span>
+      <h2>من طلب العرض إلى التشغيل في الموقع</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h4>طلب العرض</h4><p>تحدد نوع المواد والكميات وموقع المشروع ومدة التشغيل.</p></div>
+      <div class="step rv"><h4>عرض سعر</h4><p>سعر الشاحنة شهرياً وجدول التوريد وبنود العقد خلال 48 ساعة.</p></div>
+      <div class="step rv"><h4>المستندات</h4><p>الاستمارات والتأمين وخطابات التفويض وتصاريح دخول الموقع.</p></div>
+      <div class="step rv"><h4>التعبئة</h4><p>وصول الشاحنات للموقع، الفحص، والاستلام بمحضر موقّع.</p></div>
+      <div class="step rv"><h4>التشغيل</h4><p>متابعة يومية، صيانة، شاحنة بديلة عند التعطل، وفوترة شهرية.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS BAND -->
+<section id="partners" style="padding-top:0">
+  <div class="wrap">
+    <div class="band rv">
+      <div class="inner">
+        <div>
+          <span class="kicker" style="color:var(--teal)">شركاء الأسطول</span>
+          <h2>عندك قلابات؟ شغّلها معنا بعقود شهرية مضمونة</h2>
+          <p>نستقبل ملاك الشاحنات والمؤسسات لتشغيل مركباتهم ضمن مشاريعنا، بعقود واضحة ودفعات شهرية منتظمة.</p>
+        </div>
+        <div style="display:flex;gap:.9rem;flex-wrap:wrap">
+          <a href="#quote" class="btn btn-primary">سجّل أسطولك</a>
+          <a href="#quote" class="btn btn-ghost">شروط التعاقد</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section id="quote" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="grid-2" style="gap:3rem;align-items:start">
+      <div class="rv">
+        <span class="kicker">تواصل معنا</span>
+        <h2 style="font-size:clamp(1.6rem,3vw,2.3rem)">اطلب عرض سعر لمشروعك</h2>
+        <p style="color:var(--ink-soft);margin-top:.9rem">أرسل تفاصيل المشروع ويصلك عرض سعر مفصّل خلال يومي عمل.</p>
+        <ul class="contact-list" style="margin-top:1.5rem">
+          <li><span class="dot">☎</span><div><span>الهاتف</span><b class="num">+966 50 000 0000</b></div></li>
+          <li><span class="dot">✉</span><div><span>البريد الإلكتروني</span><b>info@rekaz.sa</b></div></li>
+          <li><span class="dot">⚑</span><div><span>المقر</span><b>جدة — المملكة العربية السعودية</b></div></li>
+          <li><span class="dot">⏱</span><div><span>أوقات العمل</span><b>الأحد – الخميس · 8 ص – 5 م</b></div></li>
+        </ul>
+      </div>
+
+      <form class="quote rv" id="quoteForm">
+        <div class="two">
+          <div class="field"><label for="n">الاسم</label><input id="n" name="name" required></div>
+          <div class="field"><label for="c">الشركة</label><input id="c" name="company"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="p">رقم الجوال</label><input id="p" name="phone" type="tel" inputmode="tel" required></div>
+          <div class="field"><label for="e">البريد الإلكتروني</label><input id="e" name="email" type="email"></div>
+        </div>
+        <div class="two">
+          <div class="field"><label for="s">الخدمة المطلوبة</label>
+            <select id="s" name="service"><option>تأجير قلابات بالشهر</option><option>نقل رمال ومواد ردم</option><option>تشغيل أسطول بسائقين</option><option>نقل معدات ثقيلة</option><option>تسجيل أسطول كشريك</option></select>
+          </div>
+          <div class="field"><label for="q">عدد الشاحنات</label><input id="q" name="trucks" type="number" min="1" placeholder="مثال: 20"></div>
+        </div>
+        <div class="field"><label for="l">موقع المشروع ومدته</label><textarea id="l" name="location" rows="3" placeholder="الدمام — 6 أشهر"></textarea></div>
+        <button type="submit" class="btn btn-dark" id="quoteSubmit" style="width:100%;justify-content:center">إرسال الطلب</button>
+        <p id="ok" hidden style="margin:1rem 0 0;color:var(--teal-deep);font-weight:600;font-size:.9rem">تم استلام طلبك — سنتواصل معك قريباً.</p>
+        <p id="err" hidden style="margin:1rem 0 0;color:#B3261E;font-weight:600;font-size:.9rem">تعذّر إرسال الطلب — حاول مرة أخرى أو تواصل معنا عبر واتساب.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<div class="hazard"></div>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="brand" style="margin-bottom:1rem">
+          <img class="logo-img" src="assets/rekaz-logo.png" alt="شعار ركاز">
+          <span><b style="color:#fff">ركاز للإمداد والخدمات اللوجستية</b><small>REKAZ LOGISTICS · LLC</small></span>
+        </div>
+        <p style="max-width:34ch">تأجير وتشغيل أساطيل الشاحنات القلابة وخدمات النقل للمشاريع الصناعية والإنشائية في المملكة.</p>
+      </div>
+      <div><h5>الخدمات</h5><ul>
+        <li><a href="#services">تأجير قلابات بالشهر</a></li>
+        <li><a href="#services">نقل الرمال ومواد الردم</a></li>
+        <li><a href="#services">تشغيل أساطيل بسائقين</a></li>
+        <li><a href="#services">نقل المعدات الثقيلة</a></li>
+      </ul></div>
+      <div><h5>الشركة</h5><ul>
+        <li><a href="#">من نحن</a></li>
+        <li><a href="#fleet">الأسطول</a></li>
+        <li><a href="#partners">شركاء الأسطول</a></li>
+        <li><a href="#quote">تواصل معنا</a></li>
+      </ul></div>
+      <div><h5>تواصل</h5><ul>
+        <li><a href="tel:+966500000000" class="num">+966 50 000 0000</a></li>
+        <li><a href="mailto:info@rekaz.sa">info@rekaz.sa</a></li>
+        <li>جدة — السعودية</li>
+      </ul></div>
+    </div>
+    <div class="f-bottom">
+      <span>© 2026 ركاز للإمداد والخدمات اللوجستية — جميع الحقوق محفوظة</span>
+      <span><a href="#">الشروط والأحكام</a> · <a href="#">سياسة الخصوصية</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/966500000000" aria-label="تواصل عبر واتساب">✆</a>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+
+<script>
+/* nav toggle + graceful degradation when the CDN is unreachable */
+(function(){
+  var t=document.getElementById('toggle'), m=document.getElementById('menu');
+  t.addEventListener('click',function(){var o=m.classList.toggle('open');t.setAttribute('aria-expanded',o)});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A'){m.classList.remove('open');t.setAttribute('aria-expanded',false)}});
+
+  /* quote form → Google Sheets (Apps Script Web App — see README.md) */
+  var SHEETS_ENDPOINT=''; // ← ضع هنا رابط النشر من Google Apps Script (ينتهي بـ /exec)
+  var qf=document.getElementById('quoteForm');
+  if(qf) qf.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=document.getElementById('ok'), err=document.getElementById('err'), btn=document.getElementById('quoteSubmit');
+    ok.hidden=true; err.hidden=true;
+    if(!SHEETS_ENDPOINT){
+      console.warn('SHEETS_ENDPOINT غير مضبوط — راجع README.md لربط النموذج بـ Google Sheets');
+      ok.hidden=false; qf.reset(); return;
+    }
+    btn.disabled=true; var label=btn.textContent; btn.textContent='جارٍ الإرسال…';
+    fetch(SHEETS_ENDPOINT,{method:'POST',mode:'no-cors',body:new FormData(qf)})
+      .then(function(){ ok.hidden=false; qf.reset(); })
+      .catch(function(){ err.hidden=false; })
+      .finally(function(){ btn.disabled=false; btn.textContent=label; });
+  });
+
+  if(!window.gsap){
+    var s=document.getElementById('showcase'); if(s) s.style.display='none';
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    })},{threshold:.12});
+    document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i%6*60)+'ms';io.observe(el)});
+  }
+})();
+</script>
+
+<script type="module">
+/* ============================================================
+   REKAZ 3D scroll system — Three.js + GSAP ScrollTrigger + Lenis
+   one rAF loop (gsap.ticker) drives smooth-scroll and rendering
+   ============================================================ */
+try{
+  if(!window.gsap || !window.ScrollTrigger) throw new Error('GSAP unavailable');
+  gsap.registerPlugin(ScrollTrigger);
+  document.documentElement.classList.add('gsap');
+  document.documentElement.style.scrollBehavior='auto';
+
+  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse=matchMedia('(pointer: coarse)').matches;
+  const $=(s,c=document)=>c.querySelector(s);
+  const $$=(s,c=document)=>[...c.querySelectorAll(s)];
+
+  /* Arabic is cursive — split by WORD only; chars are for digits */
+  function splitWords(el){
+    if(!el) return [];
+    const label=el.textContent.trim(), words=[];
+    (function walk(node){
+      [...node.childNodes].forEach(child=>{
+        if(child.nodeType===3){
+          const frag=document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach(part=>{
+            if(!part) return;
+            if(/^\s+$/.test(part)){frag.appendChild(document.createTextNode(' '));return}
+            const s=document.createElement('span');
+            s.className='w'; s.textContent=part;
+            words.push(s); frag.appendChild(s);
+          });
+          node.replaceChild(frag,child);
+        }else if(child.nodeType===1) walk(child);
+      });
+    })(el);
+    el.setAttribute('aria-label',label);
+    return words;
+  }
+  function splitChars(el){
+    if(!el) return [];
+    const label=el.textContent.trim(); el.textContent='';
+    return label.split('').map(ch=>{
+      const s=document.createElement('span');
+      s.className='c'; s.textContent=ch;
+      el.appendChild(s); return s;
+    });
+  }
+
+  let lenis=null, tl=null, tick=null, onResize=null;
+  let needsRender=true, active=false;
+
+  /* ---------- Lenis smooth inertia scroll ---------- */
+  if(!reduced && window.Lenis){
+    lenis=new Lenis({duration:1.15,smoothWheel:true,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+    lenis.on('scroll',ScrollTrigger.update);
+  }
+  gsap.ticker.lagSmoothing(0);
+
+  $$('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      if(a.classList.contains('skip-link')) return;  // keep native focus move
+      const id=a.getAttribute('href');
+      if(id.length<2 || !lenis) return;
+      const target=document.querySelector(id);
+      if(!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target,{offset:-80});
+    });
+  });
+
+  /* ---------- Three.js stage ---------- */
+  const section=$('#showcase'), canvas=$('#s3-canvas');
+  let THREE=null, renderer=null, scene=null, camera=null;
+  let truck=null, bed=null, dust=null, shadowTex=null;
+  const wheels=[], clones=[];
+  const cam={x:11,y:3.4,z:10,tx:.5,ty:1.5,tz:0};
+  const drive={d:0};
+  let applyCam=()=>{};
+
+  try{ THREE=await import('https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js'); }
+  catch(err){ console.warn('three.js CDN unavailable — continuing without WebGL',err); }
+
+  if(THREE){
+    try{
+      const dpr=Math.min(window.devicePixelRatio||1, coarse?1.5:2);
+      renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:dpr<2,powerPreference:'high-performance'});
+      renderer.setPixelRatio(dpr);
+      renderer.toneMapping=THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure=1.25;
+    }catch(err){ renderer=null; console.warn('WebGL unavailable',err); }
+  }
+  const has3D=!!renderer;
+  if(!has3D) canvas.style.display='none';
+
+  if(has3D){
+    scene=new THREE.Scene();
+    scene.fog=new THREE.Fog(0x101413,16,48);
+    camera=new THREE.PerspectiveCamera(38,1,.1,140);
+
+    scene.add(new THREE.HemisphereLight(0xA8C4BB,0x0E1513,1.15));
+    const key=new THREE.DirectionalLight(0xFFF1DC,1.6); key.position.set(7,9,5); scene.add(key);
+    const rim=new THREE.DirectionalLight(0x4CC0A4,.9); rim.position.set(-7,6,-6); scene.add(rim);
+    const fill=new THREE.DirectionalLight(0xDDF2EA,.55); fill.position.set(-6,5,9); scene.add(fill);
+
+    const ground=new THREE.Mesh(new THREE.CircleGeometry(60,48),
+      new THREE.MeshStandardMaterial({color:0x121815,roughness:1}));
+    ground.rotation.x=-Math.PI/2; scene.add(ground);
+    const grid=new THREE.GridHelper(80,40,0x2C4A42,0x1B2E29);
+    grid.material.transparent=true; grid.material.opacity=.3;
+    grid.position.y=.01; scene.add(grid);
+
+    /* shared materials — brand teal gradient palette */
+    const M={
+      body:new THREE.MeshStandardMaterial({color:0x1E9B85,roughness:.5,metalness:.2,flatShading:true}),
+      deep:new THREE.MeshStandardMaterial({color:0x0D4F45,roughness:.55,metalness:.25,flatShading:true}),
+      mint:new THREE.MeshStandardMaterial({color:0x4CC0A4,roughness:.5,metalness:.2,flatShading:true}),
+      dark:new THREE.MeshStandardMaterial({color:0x18201E,roughness:.85,flatShading:true}),
+      glass:new THREE.MeshStandardMaterial({color:0x0E1513,roughness:.2,metalness:.6}),
+      tire:new THREE.MeshStandardMaterial({color:0x161B19,roughness:.95}),
+      hub:new THREE.MeshStandardMaterial({color:0x9FB5AD,roughness:.35,metalness:.6}),
+      lamp:new THREE.MeshStandardMaterial({color:0xFFE9B8,emissive:0xF2C46B,emissiveIntensity:1.2})
+    };
+    const box=(w,h,d,mat,x,y,z,parent)=>{
+      const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);
+      m.position.set(x,y,z); parent.add(m); return m;
+    };
+
+    const sc=document.createElement('canvas'); sc.width=sc.height=128;
+    const sx=sc.getContext('2d');
+    const grad=sx.createRadialGradient(64,64,8,64,64,62);
+    grad.addColorStop(0,'rgba(0,0,0,.42)'); grad.addColorStop(1,'rgba(0,0,0,0)');
+    sx.fillStyle=grad; sx.fillRect(0,0,128,128);
+    shadowTex=new THREE.CanvasTexture(sc);
+
+    /* low-poly dump truck — length on X, cab at +X */
+    truck=new THREE.Group();
+    box(6.4,.18,.16,M.dark,-.3,.82,.45,truck);          // frame rails
+    box(6.4,.18,.16,M.dark,-.3,.82,-.45,truck);
+    box(4.6,.14,2.2,M.dark,-.9,.96,0,truck);            // deck
+
+    const cab=new THREE.Group(); cab.position.x=2.35; truck.add(cab);
+    box(1.7,1.5,2.15,M.body,0,1.85,0,cab);              // cab body
+    box(1.78,.12,2.2,M.deep,0,2.66,0,cab);              // roof
+    box(.06,.62,1.7,M.glass,.89,2.18,0,cab);            // windshield
+    box(.9,.5,.05,M.glass,-.1,2.22,1.09,cab);           // side windows
+    box(.9,.5,.05,M.glass,-.1,2.22,-1.09,cab);
+    box(.1,.5,1.9,M.dark,.9,1.38,0,cab);                // grill
+    box(.28,.34,2.25,M.dark,.92,.76,0,cab);             // bumper
+    box(.08,.16,.3,M.lamp,.94,1.05,.78,cab);            // headlights
+    box(.08,.16,.3,M.lamp,.94,1.05,-.78,cab);
+    const exhaust=new THREE.Mesh(new THREE.CylinderGeometry(.09,.09,1.4,10),M.deep);
+    exhaust.position.set(1.42,2.25,-1.0); truck.add(exhaust);
+
+    bed=new THREE.Group(); bed.position.set(-3.1,1.06,0); truck.add(bed);  // pivot at rear
+    box(4.5,.14,2.3,M.deep,2.25,.07,0,bed);             // floor
+    box(.14,1.15,2.3,M.deep,4.42,.72,0,bed);            // front wall
+    box(4.5,1.05,.12,M.deep,2.25,.66,1.1,bed);          // side walls
+    box(4.5,1.05,.12,M.deep,2.25,.66,-1.1,bed);
+    box(.12,.95,2.26,M.deep,.07,.6,0,bed);              // tail gate
+    [1.1,2.25,3.4].forEach(x=>{                         // mint ribs
+      box(.1,1.05,.16,M.mint,x,.66,1.18,bed);
+      box(.1,1.05,.16,M.mint,x,.66,-1.18,bed);
+    });
+    box(4.5,.08,.14,M.mint,2.25,1.22,1.1,bed);          // top rims
+    box(4.5,.08,.14,M.mint,2.25,1.22,-1.1,bed);
+
+    const wheel=(x,z,w)=>{
+      const gp=new THREE.Group(); gp.position.set(x,.56,z); gp.rotation.x=Math.PI/2;
+      const tire=new THREE.Mesh(new THREE.CylinderGeometry(.56,.56,w,16),M.tire);
+      const hub=new THREE.Mesh(new THREE.CylinderGeometry(.24,.24,w+.04,10),M.hub);
+      tire.add(hub); gp.add(tire); truck.add(gp); wheels.push(tire);
+    };
+    [[2.35,1.05,.4],[2.35,-1.05,.4],[-1.4,1.05,.62],[-1.4,-1.05,.62],[-2.5,1.05,.62],[-2.5,-1.05,.62]]
+      .forEach(([x,z,w])=>wheel(x,z,w));
+
+    const blob=new THREE.Mesh(new THREE.PlaneGeometry(8.4,3.4),
+      new THREE.MeshBasicMaterial({map:shadowTex,transparent:true,depthWrite:false}));
+    blob.rotation.x=-Math.PI/2; blob.position.y=.02; truck.add(blob);
+
+    truck.rotation.y=.55;
+    scene.add(truck);
+
+    /* fleet clones — rise from below ground in chapter 3 */
+    const fleetCount=coarse?4:6;
+    const spots=[[-9,3.6],[-9,-3.6],[-18,3.6],[-18,-3.6],[-27,3.6],[-27,-3.6]];
+    for(let i=0;i<fleetCount;i++){
+      const c=truck.clone(true);
+      c.rotation.y=0;
+      c.position.set(spots[i][0],-4.5,spots[i][1]);
+      c.traverse(o=>{ if(o.isMesh&&o.material===M.tire) wheels.push(o); });
+      scene.add(c); clones.push(c);
+    }
+
+    /* drifting dust */
+    const N=coarse?90:150;
+    const pos=new Float32Array(N*3);
+    for(let i=0;i<N;i++){
+      pos[i*3]=(Math.random()-.5)*55;
+      pos[i*3+1]=Math.random()*7+.3;
+      pos[i*3+2]=(Math.random()-.5)*55;
+    }
+    const dGeo=new THREE.BufferGeometry();
+    dGeo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+    dust=new THREE.Points(dGeo,new THREE.PointsMaterial({color:0x9FD9C8,size:.07,transparent:true,opacity:.45,depthWrite:false}));
+    scene.add(dust);
+
+    applyCam=()=>{camera.position.set(cam.x,cam.y,cam.z);camera.lookAt(cam.tx,cam.ty,cam.tz)};
+    onResize=()=>{
+      const w=section.clientWidth, h=section.clientHeight;
+      camera.aspect=w/h; camera.updateProjectionMatrix();
+      renderer.setSize(w,h,false);
+      needsRender=true;
+      if(reduced){applyCam();renderer.render(scene,camera)}
+    };
+    window.addEventListener('resize',onResize);
+    onResize(); applyCam(); renderer.render(scene,camera);
+  }
+
+  /* ---------- chapter overlays ---------- */
+  const chapters=$$('.scene3d .ch');
+  const [ch1,ch2,ch3,ch4]=chapters;
+  gsap.set(chapters,{autoAlpha:0});
+  const w1h=splitWords($('.s3-title',ch1)), w1p=splitWords($('.s3-sub',ch1));
+  const d2=splitChars($('.digits',ch2)),   w2p=splitWords($('.s3-sub',ch2));
+  const d3=splitChars($('.digits',ch3)),   w3p=splitWords($('.s3-sub',ch3));
+  const w4h=splitWords($('.s3-title',ch4));
+
+  if(reduced){
+    /* static experience: one rendered frame, first chapter readable */
+    gsap.set(ch1,{autoAlpha:1});
+    const rail=$('.s3-rail'), hint=$('.s3-hint');
+    if(rail) rail.style.display='none';
+    if(hint) hint.style.display='none';
+  }else{
+
+    /* ---------- master pinned scrub timeline (10-unit scale) ---------- */
+    const railFill=$('.s3-fill'), dots=$$('.s3-dot');
+    tl=gsap.timeline({
+      defaults:{ease:'power1.inOut'},
+      scrollTrigger:{
+        trigger:section,
+        start:'top top',
+        end:coarse?'+=300%':'+=400%',
+        pin:true,
+        scrub:1,
+        anticipatePin:1,
+        invalidateOnRefresh:true,
+        onToggle:self=>{active=self.isActive;needsRender=true},
+        onUpdate:self=>{
+          railFill.style.transform=`scaleY(${self.progress})`;
+          const idx=Math.min(3,Math.floor(self.progress*4));
+          dots.forEach((d,i)=>d.classList.toggle('on',i<=idx));
+          needsRender=true;
+        }
+      }
+    });
+
+    /* camera + object choreography */
+    if(has3D){
+      tl.to(cam,{x:1.2,y:2.5,z:12.5,tx:0,ty:1.6,duration:2.5},0)
+        .to(truck.rotation,{y:-.18,duration:2.5,ease:'none'},0)
+        .to(cam,{x:-7.6,y:3.3,z:8.4,tx:-1.6,ty:1.9,tz:-2,duration:2.5},2.5)
+        .to(bed.rotation,{z:.52,duration:1.5,ease:'power2.inOut'},2.9)   // bed tips up
+        .to(bed.rotation,{z:0,duration:1.1,ease:'power2.inOut'},5.15)
+        .to(cam,{x:12,y:9.5,z:18.5,tx:-9,ty:.6,tz:0,duration:2.5},5)
+        .to(scene.fog,{near:24,far:80,duration:2},4.8)  // widen fog so the convoy reads
+        .to(truck.rotation,{y:-.5,duration:5,ease:'none'},5)
+        .to(cam,{x:15,y:8.8,z:18,tx:-6,ty:.8,tz:0,duration:2.5},7.5)
+        .to(drive,{d:24,duration:10,ease:'none'},0);                     // wheel spin proxy
+      clones.forEach((c,i)=>tl.to(c.position,{y:0,duration:.8,ease:'power2.out'},5.2+i*.12));
+    }
+
+    /* chapter 1 — converge from both sides, diverge out */
+    const half=Math.ceil(w1h.length/2);
+    const A=w1h.slice(0,half), B=w1h.slice(half);
+    const k1=$('.k',ch1), k2=$('.k',ch2), k3=$('.k',ch3), k4=$('.k',ch4);
+
+    tl.set(ch1,{autoAlpha:1},0)
+      .fromTo(k1,{y:14,autoAlpha:0},{y:0,autoAlpha:1,duration:.4},.05)
+      .fromTo(A,{x:'55vw',autoAlpha:0},{x:0,autoAlpha:1,duration:.9,ease:'power3.out',stagger:.06},.1)
+      .fromTo(B,{x:'-55vw',autoAlpha:0},{x:0,autoAlpha:1,duration:.9,ease:'power3.out',stagger:-.06},.1)
+      .fromTo(w1p,{y:22,autoAlpha:0},{y:0,autoAlpha:1,duration:.5,stagger:.03},.95)
+      .to(A,{x:'-35vw',autoAlpha:0,duration:.55,ease:'power2.in',stagger:.03},1.85)
+      .to(B,{x:'35vw',autoAlpha:0,duration:.55,ease:'power2.in',stagger:-.03},1.85)
+      .to(w1p,{y:-16,autoAlpha:0,duration:.4,stagger:.015},1.9)
+      .to(k1,{autoAlpha:0,duration:.3},1.9)
+      .set(ch1,{autoAlpha:0},2.55);
+
+    /* chapter 2 — 24 m³, digits letter-by-letter */
+    tl.set(ch2,{autoAlpha:1},2.6)
+      .fromTo(k2,{y:14,autoAlpha:0},{y:0,autoAlpha:1,duration:.35},2.65)
+      .fromTo(d2,{y:90,autoAlpha:0},{y:0,autoAlpha:1,duration:.7,ease:'back.out(1.5)',stagger:.09},2.75)
+      .fromTo($('.unit',ch2),{x:18,autoAlpha:0},{x:0,autoAlpha:1,duration:.4},3.15)
+      .fromTo(w2p,{y:20,autoAlpha:0},{y:0,autoAlpha:1,duration:.5,stagger:.03},3.25)
+      .to(ch2,{autoAlpha:0,y:-30,duration:.5,ease:'power2.in'},4.5)
+      .set(ch2,{y:0},5.05);
+
+    /* chapter 3 — 150 trucks, fleet reveal */
+    tl.set(ch3,{autoAlpha:1},5.15)
+      .fromTo(k3,{y:14,autoAlpha:0},{y:0,autoAlpha:1,duration:.35},5.2)
+      .fromTo(d3,{y:90,autoAlpha:0},{y:0,autoAlpha:1,duration:.7,ease:'back.out(1.5)',stagger:.07},5.3)
+      .fromTo($('.unit',ch3),{x:18,autoAlpha:0},{x:0,autoAlpha:1,duration:.4},5.75)
+      .fromTo(w3p,{y:20,autoAlpha:0},{y:0,autoAlpha:1,duration:.5,stagger:.03},5.85)
+      .to(ch3,{autoAlpha:0,y:-30,duration:.5,ease:'power2.in'},7.0)
+      .set(ch3,{y:0},7.55);
+
+    /* chapter 4 — CTA, stays on screen */
+    tl.set(ch4,{autoAlpha:1},7.65)
+      .fromTo(k4,{y:14,autoAlpha:0},{y:0,autoAlpha:1,duration:.35},7.7)
+      .fromTo(w4h,{y:36,autoAlpha:0},{y:0,autoAlpha:1,duration:.6,ease:'power3.out',stagger:.06},7.8)
+      .fromTo($$('.ch-cta .btn',ch4),{y:26,skewY:4,autoAlpha:0},{y:0,skewY:0,autoAlpha:1,duration:.5,ease:'back.out(1.7)',stagger:.12},8.7)
+      .to({},{duration:.8},9.2)
+      .to($('.s3-hint'),{autoAlpha:0,duration:.3},.15);
+
+    /* ---------- render loop: one rAF via gsap.ticker ---------- */
+    tick=time=>{
+      if(lenis) lenis.raf(time*1000);
+      if(!has3D) return;
+      if(active||needsRender){
+        truck.position.y=Math.sin(time*1.2)*.04;   // idle breathing
+        dust.rotation.y=time*.02;
+        for(const w of wheels) w.rotation.y=-drive.d;
+        applyCam();
+        renderer.render(scene,camera);
+        needsRender=false;
+      }
+    };
+    gsap.ticker.add(tick);
+
+    /* ---------- page-wide GSAP layer ---------- */
+    const heroWords=splitWords($('.hero h1'));
+    gsap.timeline({delay:.1,defaults:{ease:'power3.out'}})
+      .from('.hero .eyebrow',{y:20,autoAlpha:0,duration:.5})
+      .from(heroWords,{y:40,autoAlpha:0,duration:.8,stagger:.05},.15)
+      .from('.hero .lead',{y:26,autoAlpha:0,duration:.6},.55)
+      .from('.hero .hero-cta .btn',{y:22,autoAlpha:0,duration:.5,stagger:.1},.7)
+      .from('.plate',{x:-60,autoAlpha:0,duration:.8},.35);
+
+    $$('.cnt').forEach(el=>{
+      const to=parseFloat(el.dataset.to)||0;
+      const state={v:0}; el.textContent='0';
+      gsap.to(state,{v:to,duration:1.6,ease:'power2.out',
+        onUpdate:()=>{el.textContent=Math.round(state.v)},
+        scrollTrigger:{trigger:el,start:'top 95%',once:true}});
+    });
+
+    gsap.set('.rv',{autoAlpha:0,y:42});
+    ScrollTrigger.batch('.rv',{start:'top 88%',once:true,
+      onEnter:els=>gsap.to(els,{y:0,autoAlpha:1,duration:.9,ease:'power3.out',stagger:.08,overwrite:true})});
+
+    window.addEventListener('load',()=>ScrollTrigger.refresh());
+  }
+
+  /* ---------- cleanup / disposal ---------- */
+  const disposeMaterial=m=>{for(const k in m){const v=m[k];if(v&&v.isTexture)v.dispose()}m.dispose()};
+  function destroy(){
+    if(tick) gsap.ticker.remove(tick);
+    ScrollTrigger.getAll().forEach(t=>t.kill());
+    if(tl) tl.kill();
+    if(lenis) lenis.destroy();
+    if(onResize) window.removeEventListener('resize',onResize);
+    if(has3D){
+      scene.traverse(o=>{
+        if(o.geometry) o.geometry.dispose();
+        if(o.material) Array.isArray(o.material)?o.material.forEach(disposeMaterial):disposeMaterial(o.material);
+      });
+      if(shadowTex) shadowTex.dispose();
+      renderer.dispose();
+      if(renderer.forceContextLoss) renderer.forceContextLoss();
+    }
+  }
+  window.addEventListener('pagehide',destroy,{once:true});
+  window.rekaz3D={timeline:tl,lenis,destroy,cam,drive,
+    dbg:()=>({camera:camera?camera.position.toArray().map(v=>+v.toFixed(2)):null,active,needsRender})};
+
+}catch(err){
+  console.error('Animation system failed — falling back to static page',err);
+  document.querySelectorAll('.rv,.scene3d .ch').forEach(el=>{
+    el.style.opacity=1; el.style.visibility='visible'; el.style.transform='none';
+  });
+}
+</script>
+</body>
+</html>
