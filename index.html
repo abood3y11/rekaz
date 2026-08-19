@@ -203,6 +203,7 @@ html.gsap .rv{opacity:1;transform:none;transition:none}
 .ch .stat{display:flex;align-items:baseline;gap:.8rem}
 .ch .stat .digits{font-family:"IBM Plex Mono";font-size:clamp(4.5rem,14vw,9.5rem);font-weight:600;color:var(--teal);line-height:1;text-shadow:0 8px 44px rgba(30,155,133,.35)}
 .ch .stat .unit{font-family:"Readex Pro";font-size:clamp(1.2rem,2.6vw,1.9rem);color:#E8F1EE}
+.ch .stat .digits--txt{font-family:"Readex Pro";font-weight:700;font-size:clamp(2.6rem,8.5vw,6rem);line-height:1.15}
 .ch1,.ch4{text-align:center}
 .ch1 h3{max-width:22ch;margin-inline:auto}
 .ch1 p,.ch4 p{margin-inline:auto}
@@ -295,7 +296,7 @@ html.gsap .rv{opacity:1;transform:none;transition:none}
       <div class="plate-head"><span>OPERATING SPEC</span><b>لوحة التشغيل</b></div>
       <dl style="margin:0">
         <div class="spec"><dt>سعة الصندوق</dt><dd><span class="cnt" data-to="24">24</span><small>م³</small></dd></div>
-        <div class="spec"><dt>حجم الأسطول المتاح</dt><dd><span class="cnt" data-to="150">150</span><small>شاحنة</small></dd></div>
+        <div class="spec"><dt>حجم الأسطول المتاح</dt><dd>حسب الطلب</dd></div>
         <div class="spec"><dt>موديلات الشاحنات</dt><dd>2025–2026</dd></div>
         <div class="spec"><dt>نوبة التشغيل</dt><dd><span class="cnt" data-to="10">10</span><small>ساعات</small></dd></div>
         <div class="spec"><dt>شاحنة بديلة خلال</dt><dd><span class="cnt" data-to="48">48</span><small>ساعة</small></dd></div>
@@ -326,8 +327,8 @@ html.gsap .rv{opacity:1;transform:none;transition:none}
 
     <div class="ch ch3">
       <span class="k">حجم الأسطول</span>
-      <div class="stat"><span class="digits" dir="ltr">150</span><span class="unit">شاحنة</span></div>
-      <p class="s3-sub">موديلات 2025–2026 جاهزة للتوريد على دفعات حسب جدول مشروعك.</p>
+      <div class="stat"><span class="digits digits--txt">حسب الطلب</span></div>
+      <p class="s3-sub">نورّد العدد الذي يحتاجه مشروعك مهما كان حجمه — على دفعات مجدولة وقابلة للزيادة في أي وقت.</p>
     </div>
 
     <div class="ch ch4">
@@ -392,7 +393,7 @@ html.gsap .rv{opacity:1;transform:none;transition:none}
       <table>
         <thead><tr><th>المركبة</th><th>السعة</th><th>الموديل</th><th>نمط التعاقد</th><th>المتاح</th></tr></thead>
         <tbody>
-          <tr><td>شاحنة قلاب</td><td class="n">24 م³</td><td class="n">2025–2026</td><td>إيجار شهري</td><td class="n">150</td></tr>
+          <tr><td>شاحنة قلاب</td><td class="n">24 م³</td><td class="n">2025–2026</td><td>إيجار شهري</td><td class="n">حسب الطلب</td></tr>
           <tr><td>شاحنة قلاب</td><td class="n">18 م³</td><td class="n">2024–2026</td><td>إيجار شهري / يومي</td><td class="n">حسب الطلب</td></tr>
           <tr><td>لوبد نقل معدات</td><td class="n">60 طن</td><td class="n">2023–2026</td><td>بالرحلة</td><td class="n">حسب الطلب</td></tr>
           <tr><td>وايت ماء</td><td class="n">20 م³</td><td class="n">2024–2026</td><td>إيجار شهري</td><td class="n">حسب الطلب</td></tr>
@@ -781,7 +782,7 @@ try{
   gsap.set(chapters,{autoAlpha:0});
   const w1h=splitWords($('.s3-title',ch1)), w1p=splitWords($('.s3-sub',ch1));
   const d2=splitChars($('.digits',ch2)),   w2p=splitWords($('.s3-sub',ch2));
-  const d3=splitChars($('.digits',ch3)),   w3p=splitWords($('.s3-sub',ch3));
+  const d3=splitWords($('.digits',ch3)),   w3p=splitWords($('.s3-sub',ch3));  // Arabic stat: words, never chars
   const w4h=splitWords($('.s3-title',ch4));
 
   if(reduced){
@@ -854,11 +855,10 @@ try{
       .to(ch2,{autoAlpha:0,y:-30,duration:.5,ease:'power2.in'},4.5)
       .set(ch2,{y:0},5.05);
 
-    /* chapter 3 — 150 trucks, fleet reveal */
+    /* chapter 3 — fleet on demand, fleet reveal */
     tl.set(ch3,{autoAlpha:1},5.15)
       .fromTo(k3,{y:14,autoAlpha:0},{y:0,autoAlpha:1,duration:.35},5.2)
-      .fromTo(d3,{y:90,autoAlpha:0},{y:0,autoAlpha:1,duration:.7,ease:'back.out(1.5)',stagger:.07},5.3)
-      .fromTo($('.unit',ch3),{x:18,autoAlpha:0},{x:0,autoAlpha:1,duration:.4},5.75)
+      .fromTo(d3,{y:90,autoAlpha:0},{y:0,autoAlpha:1,duration:.7,ease:'back.out(1.5)',stagger:.12},5.3)
       .fromTo(w3p,{y:20,autoAlpha:0},{y:0,autoAlpha:1,duration:.5,stagger:.03},5.85)
       .to(ch3,{autoAlpha:0,y:-30,duration:.5,ease:'power2.in'},7.0)
       .set(ch3,{y:0},7.55);
